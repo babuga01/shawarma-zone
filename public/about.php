@@ -11,6 +11,8 @@
 <!-- ===== Shawarma Zone – Hype Banner ===== -->
 <section class="hype-banner">
   <div class="hype-inner">
+
+     
     <h1 class="headline">
       🍔🔥 Welcome to <span class="brand">Shawarma Zone</span> – Where Every Bite is a Blast! 🌯🍕
     </h1>
