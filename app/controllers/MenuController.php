@@ -1,5 +1,8 @@
 <?php
+namespace App\Controllers;
+
 require_once __DIR__ . '/../Models/MenuModel.php';
+use App\Models\MenuModel;
 
 class MenuController {
     private $model;
@@ -13,9 +16,16 @@ class MenuController {
         $menu = [];
 
         foreach ($categories as $cat) {
-            $menu[$cat['name']] = $this->model->getDishesByCategory($cat['id']);
+            $dishes = $this->model->getDishesByCategory($cat['id']);
+            if (!empty($dishes)) {
+                $menu[$cat['name']] = $dishes;
+            }
         }
 
         return $menu;
+    }
+
+    public function getCategoryDishes($categoryId) {
+        return $this->model->getDishesByCategory($categoryId);
     }
 }
