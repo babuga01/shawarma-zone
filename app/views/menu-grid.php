@@ -1,6 +1,9 @@
 <?php 
 require_once __DIR__ . '/../../config/db.php';
-foreach ($dishes as $dish): ?>
+
+foreach ($dishes as $dish): 
+  ?>
+  
   <div class="dish-card">
      <img src="//public/images/<?= htmlspecialchars($dish['image_url']) ?>" alt="<?= htmlspecialchars($dish['name']) ?>">
      <h3><?= htmlspecialchars($dish['name']) ?></h3>
