@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
-require_once __DIR__ . '/../app/Controllers/MenuController.php';
+require_once __DIR__ . '/../app/controllers/MenuController.php';
+require_once __DIR__ . '/../config/db.php';
 
 $controller = new MenuController();
 $menu = $controller->getMenu();
@@ -28,7 +29,7 @@ $menu = $controller->getMenu();
   <!-- Dish Grids -->
   <?php foreach ($menu as $cat => $dishes): ?>
      <div class="dish-grid" data-cat="<?= htmlspecialchars($cat) ?>">
-        <?php include __DIR__ . '/../app/Views/menu-grid.php'; ?>
+        <?php include __DIR__ . '/../app/views/menu-grid.php'; ?>
      </div>
   <?php endforeach; ?>
 </section>

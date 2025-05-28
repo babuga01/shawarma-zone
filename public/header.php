@@ -5,9 +5,10 @@ $path = basename($_SERVER['PHP_SELF']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shawarma Zone</title>
-  <link rel="stylesheet" href="/public/css/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- Font-Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -16,9 +17,9 @@ $path = basename($_SERVER['PHP_SELF']);
   <div class="logo">Shawarma <span>Zone</span></div>
 
   <nav>
-    <a href="/public/index.php"   class="<?= $path==='index.php' ? 'active':'' ?>">Home</a>
-    <a href="/public/menu.php"    class="<?= $path==='menu.php'  ? 'active':'' ?>">Menu</a>
-    <a href="/public/about.php"   class="<?= $path==='about.php' ? 'active':'' ?>">About</a>
+    <a href="index.php"   class="<?= $path==='index.php' ? 'active':'' ?>">Home</a>
+    <a href="menu.php"    class="<?= $path==='menu.php'  ? 'active':'' ?>">Menu</a>
+    <a href="about.php"   class="<?= $path==='about.php' ? 'active':'' ?>">About</a>
   </nav>
 
   <div class="icons">
@@ -45,4 +46,4 @@ $path = basename($_SERVER['PHP_SELF']);
    <div id="cartItems">Cart is empty.</div>
    <button id="checkoutBtn" class="primary">Checkout</button>
 </div>
-<script src="/public/js/ui.js" defer></script>
+<script src="js/ui.js" defer></script>
