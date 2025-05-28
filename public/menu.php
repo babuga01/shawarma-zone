@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /public/login.php');
+    exit();
+}
+
 include 'header.php';
 require_once __DIR__ . '/../app/controllers/MenuController.php';
 require_once __DIR__ . '/../config/db.php';
