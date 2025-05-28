@@ -1,18 +1,39 @@
 <?php
+namespace App\Models;
+
 require_once __DIR__ . '/../../config/db.php';
 
+use mysqli;
+
 class MenuModel {
-    public function getCategories() {
+    private $conn;
+
+    public function __construct() {
         global $conn;
-        $sql = "SELECT * FROM categories";
-        return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+        $this->conn = $conn;
+    }
+
+    public function getCategories() {
+        $sql = "SELECT id, name FROM categories";
+        $stmt = $this->conn->prepare($sql);
+
+        if ($stmt->execute()) {
+            return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        } else {
+            return []; // Return an empty array on failure
+        }
     }
 
     public function getDishesByCategory($categoryId) {
-        global $conn;
-        $stmt = $conn->prepare("SELECT * FROM dishes WHERE category_id = ? AND is_active = 1");
-        $stmt->bind_param("i", $categoryId);
-        $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $sql = "SELECT * FROM dishes WHERE category_id = ? AND is_active = 1";
+        $stmt = $this->conn->prepare($sql);
+
+        if ($stmt) {
+            $stmt->bind_param("i", $categoryId);
+            $stmt->execute();
+            return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        } else {
+            return []; // Return an empty array if query fails
+        }
     }
 }
