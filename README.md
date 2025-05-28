@@ -8,5 +8,5 @@
 7. NAS/STE/19/1169 -- ABDULQUDDUS AYOMIDE ABDULKAREEM : Implemented connection to the database, Tables and Querries included.
 8. NAS/STE/20/1132 -- MUHAMMAD RABIU BAPPAYO : Have worked on about.php file.
 9. NAS/STE/21/1002 -- YUSUF MUHAMMAD SADA : Updated menu-grid.php file.
-10. NAS/STE/21/1003 -- ABUBAKAR ISAH MADAKI
+10. NAS/STE/21/1003 -- ABUBAKAR ISAH MADAKI : Update MenuModel.php and insert user session also.
 11. NAS/STE/21/2096 -- USMAN MUHAMMAD MIJINYAWA : Updated menu-grid.php file to insert user session.
